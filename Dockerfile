@@ -17,7 +17,7 @@ run adduser git
 add gogs /home/git/gogs
 run chown git:git /home/git -R
 # modify default ssh port
-#run sed -i 's/Port 22/Port 2222/g' /etc/ssh/sshd_config 
+run sed -i 's/Port 22/Port 2222/g' /etc/ssh/sshd_config 
 #add sshd_config /etc/ssh/sshd_config
 RUN mkdir /var/run/sshd
 

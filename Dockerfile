@@ -29,7 +29,7 @@ RUN mkdir /var/run/sshd
 add run.sh /run.sh
 volume /home/git
 #run chmod 777 /run.sh && userdel git && useradd git && chown git:git /opt/gogs -R && chown git:git /home/git -R
-run chmod 777 /run.sht && useradd git && chown git:git /opt/gogs -R 
+run chmod 777 /run.sh && useradd git && chown git:git /opt/gogs -R 
 
 EXPOSE 2222 3000
 

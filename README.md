@@ -6,14 +6,17 @@
 
 # 使用  
 	# 下载镜像
-	docker pull index.alauda.cn/yonh/gogs_dep
+	docker pull yonh/gogs
 	# 启动镜像
 	docker run -d \
 		-p 3000:3000 \
 		-p 2222:22 \
-		index.alauda.cn/yonh/gogs_dep
+		yonh/gogs
 	
-	# 访问localhost:3000进行安装
+	# build
+	docker build -t yonh/gogs .
+
+	# 访问server_name:3000进行安装
  
 # 在云雀云上部署
 步骤:  
@@ -32,6 +35,6 @@
 	#需要将/home/git挂在服务器上
 	docker run -d -p 3000:3000 -p 2222:22 \
 	-v /opt/git:/home/git \
-	index.alauda.cn/yonh/gogs_dep
+	yonh/gogs
 
 	使用sqlite的时候需要将sqlite数据文件存储在/home/git/目录,安装程序默认是存储在gogs程序的data目录	

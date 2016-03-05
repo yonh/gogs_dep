@@ -1,5 +1,6 @@
 #!/bin/bash
 
 /usr/sbin/sshd -D &
-su git -l -c "cd /home/git/gogs; ./gogs web"
-
+chown git:git /home/git -R
+chown git:git /opt/gogs -R
+su git -l -c "cd /opt/gogs; ./gogs web"

@@ -2,7 +2,7 @@
 利用docker部署gogs  
 镜像公开端口  
 3000: http服务  
-2222: ssh服务  
+22: ssh服务  
 
 # 使用  
 	# 下载镜像
@@ -10,7 +10,7 @@
 	# 启动镜像
 	docker run -d \
 		-p 3000:3000 \
-		-p 2222:2222 \
+		-p 2222:22 \
 		index.alauda.cn/yonh/gogs_dep
 	
 	# 访问localhost:3000进行安装
@@ -27,3 +27,11 @@
 5.安装完毕  
   因为云雀云会将镜像公开的端口映射到另外的一些端口上,因此我们在使用ssh方式访问git的时候需要更改端口(见服务地址页)  
   如 git clone ssh://git@gogs-yonh.myalauda.cn:22222/yonh/gogs.git  
+
+# 服务器部署
+	#需要将/home/git挂在服务器上
+	docker run -d -p 3000:3000 -p 2222:22 \
+	-v /opt/git:/home/git \
+	index.alauda.cn/yonh/gogs_dep
+
+	使用sqlite的时候需要将sqlite数据文件存储在/home/git/目录,安装程序默认是存储在gogs程序的data目录	

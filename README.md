@@ -1,4 +1,6 @@
 # gogs_dep
+- [ ] 写个脚本自动更新gogs镜像
+- [ ] 写个脚本自动更新gogs程序
 利用docker部署gogs  
 镜像公开端口  
 3000: http服务  
